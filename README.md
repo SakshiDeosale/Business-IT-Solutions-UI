@@ -31,7 +31,7 @@ A modern, responsive **Business & IT Solutions Website** built using HTML and CS
 ```
 📁 Business-Solutions-Website
 │── index.html
-│── style2.css
+│── style.css
 │── 📁 images
 │     ├── banner-img1.jpg
 │     ├── ser1.jpg ... ser6.jpg
