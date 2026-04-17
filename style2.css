@@ -1,0 +1,529 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #333;
+}
+
+.navbar {
+  display: flex;
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar input#menu-toggler {
+  display: none;
+}
+
+.navbar #hamburger-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .all-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .all-links li {
+  list-style: none;
+}
+
+/* Header links only */
+header a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+/* Footer links */
+.footer a {
+  margin-left: 0;      /* remove left spacing */
+  padding: 0;          /* remove vertical padding */
+  display: inline;     /* prevent block spacing */
+}
+
+
+header a:hover,
+footer a:hover {
+  color: #ddd;
+}
+body {
+  padding-top: 80px;  /* height of header */
+}
+
+
+/* ================= HOME ================= */
+
+
+.homepage {
+  height: 100vh;
+  padding-top: 80px;
+  width: 100%;
+  position: relative;
+  background: url("images/banner-img1.jpg");
+  background-position: center 65%;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 1;
+}
+.homepage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.homepage .content {
+   position: relative;   /* must */
+  z-index: 2; 
+  display: flex;
+  height: 85%;
+  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.homepage .content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.homepage .content .text {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+}
+.content a {
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+.content a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.3);
+}
+/* ================= SECTIONS ================= */
+
+section {
+  padding: 70px 20px 40px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+section p {
+  margin-bottom: 30px;
+}
+
+/* ================= SERVICES ================= */
+
+.services .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.services .card {
+  background: #fff;
+  width: calc(100% / 3 - 20px);
+  padding: 40px 15px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+  list-style: none;
+}
+
+.services .card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* ================= PORTFOLIO FLIP CARDS ================= */
+
+.portfolio-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.flip-card {
+  width: calc(100% / 3 - 20px);
+  height: 320px;
+  perspective: 1200px;
+  margin-bottom: 30px;
+  list-style: none;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 7px;
+  backface-visibility: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-front img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.flip-front h3 {
+  padding: 15px;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== About Section ===== */
+.about {
+  padding: 80px 10%;
+  background: linear-gradient(to right, #f9f9f9, #e6f2e6);
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* Grid Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Cards */
+.about-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+/* Team Section */
+.team-section {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.team-section h3 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.team-member {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.team-member:hover {
+  background: #2e7d32;
+  color: white;
+  transform: scale(1.05);
+}
+
+.team-member h4 {
+  margin-bottom: 5px;
+}
+
+
+/* ================= CONTACT ================= */
+.contact {
+  text-align: center;   /* keep heading centered */
+}
+.contact .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 20px auto 0;  /* reduced from 50px to 20px */
+  text-align: left;
+}
+
+.contact .row .col {
+  padding: 0 10px;
+  width: calc(100% / 2 - 50px);
+}
+.contact .col p {
+  margin-bottom: 10px;
+}
+.contact .col p i {
+  color: #7a7a7a;
+  margin-right: 10px;
+}
+.contact form input {
+  height: 45px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #bfbfbf;
+}
+.contact form textarea {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  height: 150px;
+  outline: none;
+  resize: vertical;
+  border: 1px solid #bfbfbf;
+}
+.contact form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #333;
+  transition: 0.2s ease;
+}
+.contact form button:hover {
+  background: #525252;
+}
+/* ===== Footer ===== */
+/* ===== Footer ===== */
+.footer {
+  background: #0f0f0f;
+  color: #ccc;
+  padding: 45px 8% 15px; /* reduced top & bottom spacing */
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px; /* reduced column gap */
+}
+
+/* Headings */
+.footer-col h3,
+.footer-col h4 {
+  color: #fff;
+  margin-bottom: 15px; /* reduced spacing */
+  font-size: 18px;
+}
+
+/* Paragraph */
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+  margin: 0;
+}
+
+/* Lists */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 6px; /* tighter spacing */
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #2e7d32;
+}
+
+/* Social Links */
+.social-links a {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #2e7d32;
+}
+
+/* Divider */
+.footer hr {
+  border: none;
+  border-top: 1px solid #222;
+  margin: 30px 0 15px; /* reduced */
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  padding-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 860px) {
+
+  .services .card,
+  .flip-card {
+    width: calc(100% / 2 - 15px);
+  }
+
+  .contact .row {
+    flex-direction: column;
+  }
+
+  .contact .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .services .card,
+  .flip-card {
+    width: 100%;
+  }
+
+  .homepage h1 {
+    font-size: 40px;
+  }
+}
+
+/* Fix extra space before footer */
+.contact {
+  padding-bottom: 20px;
+}
+/* Remove extra bottom spacing before footer */
+.contact {
+  padding-bottom: 10px !important;
+  margin-bottom: 0 !important;
+}
